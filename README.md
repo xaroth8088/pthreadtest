@@ -1,5 +1,14 @@
+# Goal
+To use a combination of `webpack` and `emscripten` to package up a multithreaded webassembly program into a single JS file, for use in published npm libraries.
+
+# Setup
+Ensure this is checked out in a sibling directory to `emsdk`.  Then:
+* `yarn` to install dependencies
+* `yarn build` to run emscripten and build the wasm
+* `yarn start` to run webpack-dev-server, so that you can see whether the code runs (open `localhost:8080` in your browser; the code just writes some text to the console).
+
 # Current state
-As checked-in, this repo can be built and run correctly (`yarn && yarn build && yarn start`, then open `localhost:8080` in your browser), however `yarn build` generates three JS files:
+As checked-in, this repo can be built and run correctly, however `yarn build` generates three JS files:
 * `dist/main.js`
 * `dist/src_wasm_PthreadTest_mjs.js`
 * `dist/src_wasm_PthreadTest_worker_js.js`
