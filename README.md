@@ -31,4 +31,4 @@ The first warning seems ignoreable.  The second, however, is problematic and can
 The hang can be triggered by uncommenting the `worker-loader` lines in `webpack.config.js` and then running `yarn build`.  Without having stepped through what `webpack` is doing behind the scenes, the most obvious culprit appears to be that circular dependency.  What's more, I'm pretty sure that this dependency will make it impossible to compile down to a single file with the worker inlined until that circular dependency is resolved.
 
 ## Suggestion
-Maybe rather than having the `module` -> `worker` -> `module` circular dependency at compile time, instead pass the module to the worker at runtime just after the worker is instantiated.
+Maybe rather than having the `module` -> `worker` -> `module` circular dependency at compile time, instead pass the module to the worker at runtime just after the worker is instantiated?
