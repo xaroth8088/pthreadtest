@@ -1,0 +1,24 @@
+{
+  "name": "pthreadtest",
+  "version": "1.0.0",
+  "description": "an attempt to use webpack + emscripten to make a single file output happen",
+  "main": "index.js",
+  "author": "Geoffrey Benson",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist src/wasm/* && ./build.sh && webpack --progress",
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "webpack-dev-server": "^3.11.2",
+    "worker-loader": "^3.0.8"
+  }
+}
